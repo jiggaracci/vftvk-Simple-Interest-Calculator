@@ -1,22 +1,24 @@
-var p,r,y,i;
+var p,r,y,i,ir;
 function compute(){
     validator()
     //load variables from input
     p = document.getElementById("principal").value;
-    r = document.getElementById("rate").value;
+    //r = document.getElementById("rate").value;
     y = document.getElementById("years").value;
     i = document.getElementById("interest").value;
+	ir = document.getElementById("slide").innerText;
     //convert to numbers
     var principal = Number(p);
     var rate = Number(r);    
     var years = Number(y);
-    var interests = p * y * r/100;
+	ir = Number(ir);
+    var interests = p * y * ir/100;
     var future = 2021 + years;
     document.getElementById('result').innerHTML = 
     "<br>If you deposit <mark>"+principal+"</mark>,<br>\
-    at an interest rate of <mark>"+rate+"</mark>.<br>\
-    You will receive an amount of <mark>"+interests+"</mark>,<br>\
-    in the year <mark>"+future+"</mark><br>";
+    at an interest rate of <mark>"+ir+"%</mark>.<br>\
+    You will receive an amount of $<mark>"+interests+"</mark>,<br>\
+    in the year <mark>"+future+"</mark>.<br>";
     return i;
 }
 function slide(){
