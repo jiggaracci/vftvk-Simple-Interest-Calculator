@@ -6,8 +6,10 @@
     <body>
 	<div class='maindiv'>
         <h1>Simple Interest Calculator</h1>
+		
         Amount <input type="number" id="principal" onchange="validator()">  <br/>
-        Rate <input type="number"  id="rate" >  <br/>
+        Interest Rate <input id="interest" onchange="slide()" type="range" min="1" max="20" step="0.25" value="10.25">
+        <span id="slide">10.25</span>%  <br/>
         No. of Years 
         <select name="years"  id="years"> 
         <option value="1">1</option>
@@ -22,9 +24,6 @@
         <option value="10">10</option> 
         </select>
         <br/>
-        Interest : <input id="interest" onchange="slide()" type="range" min="1" max="20" step="0.25" value="10.25">
-        <span id="slide">10.25%</span>
-        <br>
         <button onclick="compute()">Compute</button>
         <span id="result"></span>
         <footer>&copy; Everyone Can Get Rich</footer>
